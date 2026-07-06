@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<!-- Source for og-image.png (1200×630). The card sits in a 20px paper margin so the
+     screenshot can be center-cropped past headless Chrome's rounded window corners:
+
+     chrome --headless=new --disable-gpu --hide-scrollbars --force-device-scale-factor=2 \
+       --window-size=1240,670 --virtual-time-budget=10000 --screenshot=og-big.png og-card.html
+     sips -c 1260 2400 og-big.png --out og-crop.png && sips -z 630 1200 og-crop.png --out og-image.png
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Albert+Sans:wght@200;300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --paper: #FBF8F2;
+    --ink: #12222E;
+    --ink-55: rgba(18, 34, 46, 0.55);
+    --harbour: #1A6B96;
+    --harbour-deep: #12506F;
+    --sunset: #D9451F;
+    --mist: #E6ECEF;
+    --diamond-grad: linear-gradient(135deg, #1A6B96, #12506F);
+    --wordmark-grad: linear-gradient(180deg, #1F4A66, #12222E);
+    --font-display: "Fraunces", Georgia, serif;
+    --font-ui: "Albert Sans", -apple-system, sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1240px; height: 670px; overflow: hidden; background: var(--paper); }
+  .card {
+    position: relative;
+    width: 1200px; height: 630px;
+    margin: 20px;
+    overflow: hidden;
+    background: var(--paper);
+    font-family: var(--font-ui);
+    color: var(--ink);
+  }
+
+  /* harbour line-art, bottom-right, same artwork as the page */
+  .deco-harbour {
+    position: absolute; right: -40px; bottom: -30px;
+    width: 620px; color: var(--harbour);
+  }
+  .deco-harbour svg { display: block; width: 100%; height: auto; }
+
+  .inner {
+    position: relative; z-index: 1;
+    height: 100%;
+    padding: 64px 80px 56px;
+    display: flex; flex-direction: column;
+  }
+
+  .brand { display: flex; align-items: center; gap: 18px; }
+  .mark {
+    width: 56px; height: 56px; border-radius: 13px;
+    background: var(--diamond-grad);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .mark .diamond {
+    width: 19px; height: 19px; border-radius: 3px;
+    background: var(--paper);
+    transform: rotate(45deg);
+  }
+  .wordmark {
+    font-family: var(--font-ui); font-weight: 600;
+    font-size: 27px; letter-spacing: 0.22em; padding-left: 0.22em;
+  }
+  .wordmark .name {
+    background: var(--wordmark-grad);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .wordmark .tld { color: var(--harbour); }
+
+  .display {
+    margin-top: 74px;
+    font-family: var(--font-display);
+    font-weight: 480;
+    font-size: 148px; line-height: 0.96;
+    letter-spacing: -0.015em;
+  }
+  .display .accent { color: var(--harbour); }
+
+  .tagline {
+    margin-top: 34px;
+    font-size: 28px; font-weight: 300;
+    color: var(--ink-55);
+    letter-spacing: 0.01em;
+  }
+
+  .acquire {
+    margin-top: auto;
+    display: inline-flex; align-items: center; gap: 14px;
+    align-self: flex-start;
+    padding: 15px 28px;
+    border: 1px solid rgba(217, 69, 31, 0.38);
+    border-radius: 999px;
+    background: rgba(217, 69, 31, 0.06);
+    color: var(--sunset);
+    font-size: 20px; font-weight: 600;
+    letter-spacing: 0.14em; text-transform: uppercase;
+  }
+  .acquire .diamond {
+    width: 10px; height: 10px; border-radius: 2px;
+    background: var(--sunset);
+    transform: rotate(45deg);
+  }
+</style>
+</head>
+<body>
+<div class="card">
+
+  <div class="deco-harbour">
+    <svg viewBox="0 0 640 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
+        <g stroke-opacity="0.12">
+          <path d="M-30 340 C60 170 250 170 340 340"/>
+          <path d="M-30 340 L340 340"/>
+        </g>
+        <g stroke-opacity="0.10">
+          <path d="M40 262 L40 340"/>
+          <path d="M90 229 L90 340"/>
+          <path d="M140 214 L140 340"/>
+          <path d="M190 218 L190 340"/>
+          <path d="M240 240 L240 340"/>
+          <path d="M290 280 L290 340"/>
+        </g>
+        <g stroke-opacity="0.32">
+          <path d="M150 470 C158 352 216 232 322 158 C338 262 344 380 340 470"/>
+        </g>
+        <g stroke-opacity="0.20">
+          <path d="M186 470 C192 380 226 292 300 220"/>
+          <path d="M222 470 C228 396 252 330 306 272"/>
+          <path d="M262 470 C266 410 282 360 318 322"/>
+        </g>
+        <g stroke-opacity="0.28">
+          <path d="M340 470 C348 388 396 302 470 254 C480 330 484 408 480 470"/>
+        </g>
+        <g stroke-opacity="0.18">
+          <path d="M368 470 C374 404 404 344 456 300"/>
+          <path d="M404 470 C408 420 428 374 466 340"/>
+        </g>
+        <g stroke-opacity="0.26">
+          <path d="M480 470 C488 420 516 374 560 348 C566 396 566 436 562 470"/>
+        </g>
+        <path d="M500 470 C506 432 524 398 552 376" stroke-opacity="0.16"/>
+        <path d="M96 470 L600 470" stroke-opacity="0.20"/>
+        <path d="M120 484 L580 484" stroke-opacity="0.12"/>
+        <g stroke-opacity="0.14">
+          <path d="M40 500 Q100 493 160 500 T280 500 T400 500 T520 500"/>
+          <path d="M120 512 Q180 505 240 512 T360 512 T480 512"/>
+        </g>
+      </g>
+      <g fill="currentColor" fill-opacity="0.45">
+        <circle cx="322" cy="158" r="2.4"/><circle cx="470" cy="254" r="2.2"/><circle cx="560" cy="348" r="2.2"/>
+        <circle cx="155" cy="212" r="2.2"/>
+        <circle cx="100" cy="498" r="1.8"/><circle cx="260" cy="505" r="1.8"/><circle cx="430" cy="499" r="1.8"/>
+      </g>
+    </svg>
+  </div>
+
+  <div class="inner">
+    <div class="brand">
+      <span class="mark"><span class="diamond"></span></span>
+      <div class="wordmark"><span class="name">ASKSYDNEY</span><span class="tld">.AI</span></div>
+    </div>
+
+    <h1 class="display">Just<br /><span class="accent">Ask</span></h1>
+
+    <p class="tagline">Your Sydney AI travel guide — instant local answers, without the noise.</p>
+
+    <div class="acquire">
+      <span class="diamond"></span>
+      Premium domain available for acquisition
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
